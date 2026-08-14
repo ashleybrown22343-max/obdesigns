@@ -34,3 +34,6 @@ export function useDocumentTitle({ title, description = "" }: SEOProps) {
     canonical.href = window.location.href;
   }, [title, description]);
 }
+
+// Alias for pages that use `useSEO`
+export const useSEO = useDocumentTitle;
