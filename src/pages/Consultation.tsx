@@ -3,10 +3,14 @@ import { buildInquiryWhatsAppUrl } from "../lib/whatsapp";
 import { business } from "../data/business";
 import { useDocumentTitle } from "../lib/useDocumentTitle";
 import "../styles/consultation.css";
+import { useSEO } from "../lib/useDocumentTitle";
 
 export default function Consultation() {
-  useDocumentTitle("Book a Consultation | OB Designs & Interiors");
-
+  useSEO({
+    title: "Book a Consultation | OB Designs & Interiors",
+    description:
+      "Request a free project consultation for painting, screeding, POP work, or interior and exterior design with OB Designs & Interiors.",
+  });
   const [form, setForm] = useState({ fullName: "", phone: "", location: "", serviceNeeded: "", description: "" });
 
   const update = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
