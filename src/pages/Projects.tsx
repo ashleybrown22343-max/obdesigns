@@ -2,18 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { projects, type ProjectCategory } from "../data/projects";
+import { useDocumentTitle } from "../lib/useDocumentTitle";
 import "../styles/projects.css";
 
-const filters: ("All" | ProjectCategory)[] = [
-  "All",
-  "Painting",
-  "Screeding",
-  "POP Work",
-  "Interior Job",
-  "Exterior Job",
-];
+const filters: ("All" | ProjectCategory)[] = ["All", "Painting", "Screeding", "POP Work", "Interior Job", "Exterior Job"];
 
 export default function Projects() {
+  useDocumentTitle("Our Projects | OB Designs & Interiors");
+
   const [filter, setFilter] = useState<"All" | ProjectCategory>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -22,12 +18,10 @@ export default function Projects() {
   function close() {
     setLightboxIndex(null);
   }
-
   function next() {
     if (lightboxIndex === null) return;
     setLightboxIndex((lightboxIndex + 1) % filtered.length);
   }
-
   function prev() {
     if (lightboxIndex === null) return;
     setLightboxIndex((lightboxIndex - 1 + filtered.length) % filtered.length);
@@ -38,10 +32,7 @@ export default function Projects() {
       <div className="projectsHero">
         <p className="eyebrow">Our Work</p>
         <h1>Projects that speak for themselves</h1>
-        <p>
-          A look at real work by OB Designs & Interiors — painting, screeding, POP
-          installations, and full interior and exterior jobs, delivered nationwide.
-        </p>
+        <p>A look at real work by OB Designs & Interiors — painting, screeding, POP installations, and full interior and exterior jobs, delivered nationwide.</p>
       </div>
 
       <div className="filterRow">
@@ -72,12 +63,7 @@ export default function Projects() {
           <button className="lightboxNav prev" onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Previous">
             <ChevronLeft size={28} />
           </button>
-          <img
-            className="lightboxImg"
-            src={filtered[lightboxIndex].image}
-            alt={`${filtered[lightboxIndex].category} project`}
-            onClick={(e) => e.stopPropagation()}
-          />
+          <img className="lightboxImg" src={filtered[lightboxIndex].image} alt={`${filtered[lightboxIndex].category} project`} onClick={(e) => e.stopPropagation()} />
           <button className="lightboxNav next" onClick={(e) => { e.stopPropagation(); next(); }} aria-label="Next">
             <ChevronRight size={28} />
           </button>
@@ -85,4 +71,4 @@ export default function Projects() {
       )}
     </div>
   );
-      }
+}
