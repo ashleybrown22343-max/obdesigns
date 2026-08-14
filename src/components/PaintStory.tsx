@@ -30,6 +30,7 @@ export default function PaintStory() {
           <img
             src="/images/ob/paint-1.jpg"
             alt="New Wave Paint product"
+            loading="lazy"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </motion.div>
