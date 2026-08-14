@@ -1,26 +1,9 @@
 export const services = [
-  {
-    group: "Interior Design & Decorating",
-    items: [
-      "Commercial interior design",
-      "Home decor selection",
-      "Interior decorating",
-      "Living room design",
-      "Office space design",
-    ],
-  },
-  {
-    group: "Painting & Finishing",
-    items: ["Interior painting", "Exterior painting", "POP installations", "3D panels"],
-  },
-  {
-    group: "Windows & Soft Furnishings",
-    items: ["Window design", "Curtains & beddings"],
-  },
-  {
-    group: "Paint Manufacturing & Products",
-    items: ["Paint manufacturing", "New Wave paint products"],
-  },
+  { name: "Painting", description: "Interior and exterior painting, finished to a high standard." },
+  { name: "Screeding", description: "Floor screeding for a smooth, durable finish." },
+  { name: "POP Work", description: "POP ceiling and wall installations." },
+  { name: "Interior Job", description: "Full interior design and decorating." },
+  { name: "Exterior Job", description: "Exterior finishing and façade work." },
 ];
 
 export const whyOB = [
