@@ -1,63 +1,80 @@
-import { useState } from "react";
-import { products, formatPrice, unitLabel } from "../data/products";
-import { useCart } from "../context/CartContext";
-import { buildOrderWhatsAppUrl } from "../lib/whatsapp";
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { products, lowestPrice, formatPrice, type ProductCategory } from "../data/products";
+import "../styles/shop.css";
+
+const categories: ("All" | ProductCategory)[] = ["All", "Panels", "Blinds", "Paint"];
 
 export default function Shop() {
-  const { lines, addItem, removeItem, incrementItem, decrementItem, itemCount } = useCart();
-  const [order, setOrder] = useState({ fullName: "", phone: "", address: "", cityState: "" });
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState<"All" | ProductCategory>("All");
+  const [sort, setSort] = useState<"default" | "low" | "high">("default");
 
-  const canCheckout = lines.length > 0 && order.fullName.trim() !== "" && order.phone.trim() !== "";
+  const filtered = useMemo(() => {
+    let list = products.filter((p) => p.name.toLowerCase().includes(search.toLowerCase()));
+    if (category !== "All") list = list.filter((p) => p.category === category);
+
+    if (sort === "low") {
+      list = [...list].sort((a, b) => (lowestPrice(a) ?? Infinity) - (lowestPrice(b) ?? Infinity));
+    } else if (sort === "high") {
+      list = [...list].sort((a, b) => (lowestPrice(b) ?? -Infinity) - (lowestPrice(a) ?? -Infinity));
+    }
+    return list;
+  }, [search, category, sort]);
 
   return (
-    <div style={{ padding: "2rem 1.5rem", fontFamily: "Inter, sans-serif", maxWidth: "700px", margin: "0 auto" }}>
-      <h1 style={{ fontFamily: "Fraunces, serif" }}>Shop</h1>
+    <div className="shopPage">
+      <div className="shopHero">
+        <p className="eyebrow">Shop</p>
+        <h1>Paint, panels & window finishes</h1>
+      </div>
 
-      {products.map((p) => (
-        <div key={p.id} style={{ marginBottom: "1.5rem" }}>
-          <strong>{p.name}</strong>
-          {p.variants.map((v) => (
-            <div key={v.id} style={{ margin: "0.4rem 0" }}>
-              {v.label} — {formatPrice(v.price)}{v.price !== null ? unitLabel(v.unit) : ""}{" "}
-              <button onClick={() => addItem(p, v)}>Add</button>
-            </div>
+      <div className="toolbar">
+        <input
+          className="searchInput"
+          placeholder="Search products..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <div className="chipRow">
+          {categories.map((c) => (
+            <button
+              key={c}
+              className={`chip ${category === c ? "active" : ""}`}
+              onClick={() => setCategory(c)}
+            >
+              {c}
+            </button>
           ))}
         </div>
-      ))}
+        <select className="sortSelect" value={sort} onChange={(e) => setSort(e.target.value as typeof sort)}>
+          <option value="default">Sort: Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+        </select>
+      </div>
 
-      <h2>Cart ({itemCount})</h2>
-      {lines.map((l) => (
-        <div key={l.variantId} style={{ margin: "0.4rem 0" }}>
-          {l.productName} ({l.variantLabel}) x{l.quantity}{" "}
-          <button onClick={() => decrementItem(l.variantId)}>-</button>
-          <button onClick={() => incrementItem(l.variantId)}>+</button>
-          <button onClick={() => removeItem(l.variantId)}>Remove</button>
-        </div>
-      ))}
-
-      {lines.length > 0 && (
-        <div style={{ marginTop: "2rem" }}>
-          <h2>Your details</h2>
-          <div style={{ display: "grid", gap: "0.6rem", maxWidth: "400px" }}>
-            <input placeholder="Full name" value={order.fullName} onChange={(e) => setOrder((o) => ({ ...o, fullName: e.target.value }))} />
-            <input placeholder="Phone number" value={order.phone} onChange={(e) => setOrder((o) => ({ ...o, phone: e.target.value }))} />
-            <input placeholder="Delivery address" value={order.address} onChange={(e) => setOrder((o) => ({ ...o, address: e.target.value }))} />
-            <input placeholder="City/State" value={order.cityState} onChange={(e) => setOrder((o) => ({ ...o, cityState: e.target.value }))} />
-          </div>
-
-          {canCheckout ? (
-            <p style={{ marginTop: "1rem" }}>
-              <a href={buildOrderWhatsAppUrl(order, lines)} target="_blank" rel="noreferrer">
-                Order via WhatsApp
-              </a>
-            </p>
-          ) : (
-            <p style={{ marginTop: "1rem", color: "#0E0D0C88", fontSize: "0.85rem" }}>
-              Enter your name and phone number to continue.
-            </p>
-          )}
+      {filtered.length === 0 ? (
+        <p className="emptyState">No products match your search.</p>
+      ) : (
+        <div className="productGrid">
+          {filtered.map((p) => (
+            <Link key={p.id} to={`/shop/${p.id}`} className="productCard">
+              <div className="productImage">
+                <img src={`/images/ob/product-${p.id}.jpg`} alt={p.name} loading="lazy" />
+              </div>
+              <div className="productInfo">
+                <p className="productCategory">{p.category}</p>
+                <h3 className="productName">{p.name}</h3>
+                <p className="productPrice">
+                  {p.variants.length > 1 ? "From " : ""}
+                  {formatPrice(lowestPrice(p))}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       )}
     </div>
   );
-              }
+}
