@@ -5,4 +5,20 @@ export const business = {
   phoneWhatsApp: "2348131929791",
   email: "Obinteriors555@gmail.com",
   yearsActive: 6,
+  staff: { core: 4, contractSkilled: 20 },
+  serviceArea: "Nationwide service and nationwide delivery",
+  social: {
+    facebook: "https://www.facebook.com/share/1BAd2ZoSzp/",
+    instagram: null as string | null,
+    googleBusiness: "https://share.google/bFqBAlLAhKO2Wuk27",
+  },
+  hours: [
+    { day: "Monday", time: "8:00 AM – 5:00 PM" },
+    { day: "Tuesday", time: "8:00 AM – 5:00 PM" },
+    { day: "Wednesday", time: "8:00 AM – 5:00 PM" },
+    { day: "Thursday", time: "8:30 AM – 5:00 PM" },
+    { day: "Friday", time: "8:30 AM – 5:00 PM" },
+    { day: "Saturday", time: "10:00 AM – 5:00 PM" },
+    { day: "Sunday", time: "Closed" },
+  ],
 };
