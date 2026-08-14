@@ -5,6 +5,7 @@ import Shop from "./pages/Shop";
 import Projects from "./pages/Projects";
 import Consultation from "./pages/Consultation";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
