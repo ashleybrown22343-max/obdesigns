@@ -28,7 +28,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, scale: 1.03 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, ease: "easeOut" }} style={{ aspectRatio: "4 / 3", overflow: "hidden", background: "#1A1816" }}>
-          <img src="/images/ob/hero-1.jpg" alt="OB Designs & Interiors project" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <img src="/images/ob/hero-2.jpg" alt="OB Designs & Interiors project" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </motion.div>
       </div>
     </section>
