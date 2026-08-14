@@ -1,17 +1,22 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import type { Product } from "../data/products";
+import type { Product, ProductVariant, PriceUnit } from "../data/products";
 
 export interface CartLine {
   productId: string;
-  name: string;
+  productName: string;
+  variantId: string;
+  variantLabel: string;
   price: number | null;
+  unit: PriceUnit;
   quantity: number;
 }
 
 interface CartContextValue {
   lines: CartLine[];
-  addItem: (product: Product) => void;
-  removeItem: (productId: string) => void;
+  addItem: (product: Product, variant: ProductVariant) => void;
+  removeItem: (variantId: string) => void;
+  incrementItem: (variantId: string) => void;
+  decrementItem: (variantId: string) => void;
   itemCount: number;
 }
 
@@ -32,26 +37,53 @@ export function CartProvider({ children }: { children: ReactNode }) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(lines));
   }, [lines]);
 
-  function addItem(product: Product) {
+  function addItem(product: Product, variant: ProductVariant) {
     setLines((prev) => {
-      const existing = prev.find((l) => l.productId === product.id);
+      const existing = prev.find((l) => l.variantId === variant.id);
       if (existing) {
         return prev.map((l) =>
-          l.productId === product.id ? { ...l, quantity: l.quantity + 1 } : l,
+          l.variantId === variant.id ? { ...l, quantity: l.quantity + 1 } : l,
         );
       }
-      return [...prev, { productId: product.id, name: product.name, price: product.price, quantity: 1 }];
+      return [
+        ...prev,
+        {
+          productId: product.id,
+          productName: product.name,
+          variantId: variant.id,
+          variantLabel: variant.label,
+          price: variant.price,
+          unit: variant.unit,
+          quantity: 1,
+        },
+      ];
     });
   }
 
-  function removeItem(productId: string) {
-    setLines((prev) => prev.filter((l) => l.productId !== productId));
+  function removeItem(variantId: string) {
+    setLines((prev) => prev.filter((l) => l.variantId !== variantId));
+  }
+
+  function incrementItem(variantId: string) {
+    setLines((prev) =>
+      prev.map((l) => (l.variantId === variantId ? { ...l, quantity: l.quantity + 1 } : l)),
+    );
+  }
+
+  function decrementItem(variantId: string) {
+    setLines((prev) =>
+      prev
+        .map((l) => (l.variantId === variantId ? { ...l, quantity: l.quantity - 1 } : l))
+        .filter((l) => l.quantity > 0),
+    );
   }
 
   const itemCount = lines.reduce((sum, l) => sum + l.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ lines, addItem, removeItem, itemCount }}>
+    <CartContext.Provider
+      value={{ lines, addItem, removeItem, incrementItem, decrementItem, itemCount }}
+    >
       {children}
     </CartContext.Provider>
   );
