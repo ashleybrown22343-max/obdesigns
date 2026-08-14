@@ -1,6 +1,7 @@
 .shopPage {
   background: #F3ECE1;
   min-height: 100vh;
+  position: relative;
 }
 
 .shopHero {
@@ -22,6 +23,14 @@
   font-family: "Fraunces", serif;
   font-size: clamp(2rem, 4.5vw, 3rem);
   color: #0E0D0C;
+  margin: 0 0 0.6rem;
+}
+
+.shopHero p {
+  font-family: "Inter", sans-serif;
+  color: #0E0D0C88;
+  font-size: 0.95rem;
+  max-width: 46ch;
   margin: 0;
 }
 
@@ -34,6 +43,11 @@
   gap: 1rem;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 65px;
+  z-index: 20;
+  background: #F3ECE1;
+  padding-top: 1rem;
 }
 
 .searchInput {
@@ -44,6 +58,11 @@
   background: #FAF7F2;
   min-width: 220px;
   flex: 1;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #B7913C;
 }
 
 .chipRow {
@@ -81,56 +100,69 @@
 .productGrid {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem 5rem;
+  padding: 0 1.5rem 6rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
 .productCard {
-  display: block;
-  text-decoration: none;
-  color: inherit;
   background: #FAF7F2;
   border: 1px solid #0E0D0C14;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .productCard:hover {
   border-color: #B7913C;
-  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -16px #0E0D0C33;
 }
 
 .productImage {
   aspect-ratio: 4 / 5;
   background: #0E0D0C0d;
   overflow: hidden;
+  position: relative;
 }
 
 .productImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.productCard:hover .productImage img {
+  transform: scale(1.04);
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: #0E0D0C;
+  color: #F3ECE1;
+  font-family: "Inter", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
 }
 
 .productInfo {
-  padding: 1.1rem 1.25rem 1.4rem;
-}
-
-.productCategory {
-  font-family: "Inter", sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #B7913C;
-  margin: 0 0 0.4rem;
+  padding: 1.1rem 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
 }
 
 .productName {
   font-family: "Fraunces", serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #0E0D0C;
-  margin: 0 0 0.35rem;
+  margin: 0;
 }
 
 .productPrice {
@@ -138,6 +170,76 @@
   font-size: 0.85rem;
   color: #0E0D0C88;
   margin: 0;
+}
+
+.variantRow {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.variantChip {
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid #0E0D0C22;
+  background: transparent;
+  color: #0E0D0C;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.variantChip.active {
+  background: #B7913C;
+  border-color: #B7913C;
+  color: #0E0D0C;
+}
+
+.cardFooter {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.qtyStepper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #0E0D0C22;
+}
+
+.qtyStepper button {
+  width: 30px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #0E0D0C;
+}
+
+.qtyStepper span {
+  min-width: 24px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+}
+
+.addBtn {
+  flex: 1;
+  height: 34px;
+  border: none;
+  background: #0E0D0C;
+  color: #F3ECE1;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addBtn.added {
+  background: #B7913C;
+  color: #0E0D0C;
 }
 
 .emptyState {
@@ -148,3 +250,144 @@
   color: #0E0D0C77;
   text-align: center;
 }
+
+/* floating cart button */
+.floatingCart {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 40;
+  background: #0E0D0C;
+  color: #F3ECE1;
+  border: none;
+  padding: 0.9rem 1.4rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 12px 28px -12px #0E0D0Ccc;
+}
+
+/* drawer */
+.drawerBackdrop {
+  position: fixed;
+  inset: 0;
+  background: #0E0D0Ccc;
+  z-index: 50;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(420px, 100vw);
+  background: #FAF7F2;
+  z-index: 51;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawerHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid #0E0D0C14;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawerHeader h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.drawerClose {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0E0D0C;
+}
+
+.drawerBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.drawerLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #0E0D0C0f;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+}
+
+.drawerLine .lineName {
+  font-family: "Fraunces", serif;
+  font-size: 0.95rem;
+  color: #0E0D0C;
+  margin: 0 0 0.2rem;
+}
+
+.drawerLine .lineMeta {
+  color: #0E0D0C77;
+  font-size: 0.78rem;
+}
+
+.drawerFooter {
+  border-top: 1px solid #0E0D0C14;
+  padding: 1.5rem;
+}
+
+.subtotalRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.checkoutFields {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.checkoutFields input {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #0E0D0C22;
+  background: #FFFFFF;
+}
+
+.checkoutBtn {
+  display: block;
+  text-align: center;
+  background: #0E0D0C;
+  color: #F3ECE1;
+  padding: 0.9rem;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+}
+
+.checkoutBtn.disabled {
+  background: #0E0D0C33;
+  color: #0E0D0C77;
+  pointer-events: none;
+}
+
+.drawerEmpty {
+  padding: 3rem 0;
+  text-align: center;
+  color: #0E0D0C77;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  }
