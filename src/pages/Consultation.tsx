@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { buildInquiryWhatsAppUrl } from "../lib/whatsapp";
 import { business } from "../data/business";
+import { useDocumentTitle } from "../lib/useDocumentTitle";
 import "../styles/consultation.css";
 
 export default function Consultation() {
-  const [form, setForm] = useState({
-    fullName: "",
-    phone: "",
-    location: "",
-    serviceNeeded: "",
-    description: "",
-  });
+  useDocumentTitle("Book a Consultation | OB Designs & Interiors");
+
+  const [form, setForm] = useState({ fullName: "", phone: "", location: "", serviceNeeded: "", description: "" });
 
   const update = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [key]: e.target.value }));
@@ -53,11 +50,7 @@ export default function Consultation() {
             </div>
             <div>
               <label>Service needed</label>
-              <input
-                value={form.serviceNeeded}
-                onChange={update("serviceNeeded")}
-                placeholder="Painting, Screeding, POP Work, Interior Job, Exterior Job..."
-              />
+              <input value={form.serviceNeeded} onChange={update("serviceNeeded")} placeholder="Painting, Screeding, POP Work, Interior Job, Exterior Job..." />
             </div>
             <div>
               <label>Tell us more</label>
@@ -65,12 +58,7 @@ export default function Consultation() {
             </div>
           </div>
 
-          <a
-            className={`consultSubmit ${canSubmit ? "" : "disabled"}`}
-            href={canSubmit ? buildInquiryWhatsAppUrl(form) : undefined}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a className={`consultSubmit ${canSubmit ? "" : "disabled"}`} href={canSubmit ? buildInquiryWhatsAppUrl(form) : undefined} target="_blank" rel="noreferrer">
             {canSubmit ? "Send via WhatsApp" : "Fill in name, phone & service"}
           </a>
         </div>
