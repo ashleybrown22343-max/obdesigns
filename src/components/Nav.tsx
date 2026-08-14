@@ -1,29 +1,40 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import { useCart } from "../context/CartContext";
+import "../styles/nav.css";
 
 export default function Nav() {
   const { itemCount } = useCart();
+  const [open, setOpen] = useState(false);
 
   return (
-    <header style={{ position: "sticky", top: 0, zIndex: 50, background: "#F3ECE1", borderBottom: "1px solid #0E0D0C1a" }}>
-      <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "1rem 1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "Inter, sans-serif" }}>
-        <Link to="/" style={{ fontFamily: "Fraunces, serif", fontWeight: 600, color: "#0E0D0C", textDecoration: "none" }}>
+    <header className="navHeader">
+      <div className="navInner">
+        <Link to="/" className="navLogo" onClick={() => setOpen(false)}>
           OB Designs
         </Link>
-        <nav style={{ display: "flex", gap: "1.5rem", alignItems: "center", fontSize: "0.9rem" }}>
-          <Link to="/projects" style={{ color: "#0E0D0C", textDecoration: "none" }}>Projects</Link>
-          <Link to="/shop" style={{ color: "#0E0D0C", textDecoration: "none" }}>
-            Shop{itemCount > 0 ? ` (${itemCount})` : ""}
-          </Link>
-          <Link to="/contact" style={{ color: "#0E0D0C", textDecoration: "none" }}>Contact</Link>
-          <Link
-            to="/consultation"
-            style={{ background: "#0E0D0C", color: "#F3ECE1", padding: "0.6rem 1.1rem", textDecoration: "none", fontSize: "0.85rem" }}
-          >
-            Book Consultation
-          </Link>
+
+        <nav className="navLinks">
+          <Link to="/projects">Projects</Link>
+          <Link to="/shop">Shop{itemCount > 0 ? ` (${itemCount})` : ""}</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/consultation" className="navCta">Book Consultation</Link>
         </nav>
+
+        <button className="navToggle" onClick={() => setOpen((v) => !v)} aria-label={open ? "Close menu" : "Open menu"}>
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
+
+      {open && (
+        <div className="navMobileMenu">
+          <Link to="/projects" onClick={() => setOpen(false)}>Projects</Link>
+          <Link to="/shop" onClick={() => setOpen(false)}>Shop{itemCount > 0 ? ` (${itemCount})` : ""}</Link>
+          <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
+          <Link to="/consultation" className="navCta" onClick={() => setOpen(false)}>Book Consultation</Link>
+        </div>
+      )}
     </header>
   );
 }
