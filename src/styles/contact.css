@@ -1,0 +1,184 @@
+.contactPage {
+  background: #F3ECE1;
+  min-height: 100vh;
+}
+
+.contactHero {
+  padding: 5rem 1.5rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #B7913C;
+  margin: 0 0 1rem;
+}
+
+.contactHero h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.08;
+  color: #0E0D0C;
+  margin: 0 0 1rem;
+  max-width: 20ch;
+}
+
+.contactHero p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  color: #0E0D0C99;
+  max-width: 42ch;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contactGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1px;
+  background: #0E0D0C14;
+  border: 1px solid #0E0D0C14;
+}
+
+@media (max-width: 860px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: #FAF7F2;
+  padding: 2.75rem 2.25rem;
+}
+
+.panel + .panel {
+  background: #0E0D0C;
+}
+
+.panelLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #B7913C;
+  margin: 0 0 1.75rem;
+}
+
+.contactList {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.contactRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: #0E0D0C;
+}
+
+.contactRow .iconWrap {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid #0E0D0C22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.contactRow:hover .iconWrap {
+  border-color: #B7913C;
+  background: #B7913C11;
+}
+
+.contactRow .label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0E0D0C66;
+  margin: 0 0 0.15rem;
+  display: block;
+}
+
+.contactRow .value {
+  font-family: "Fraunces", serif;
+  font-size: 1.05rem;
+  color: #0E0D0C;
+}
+
+.socialRow {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.socialIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid #0E0D0C22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0E0D0C;
+  transition: all 0.2s ease;
+}
+
+.socialIcon:hover {
+  background: #0E0D0C;
+  border-color: #0E0D0C;
+  color: #F3ECE1;
+  transform: translateY(-2px);
+}
+
+/* dark hours panel */
+.hoursList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+}
+
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #F3ECE114;
+  color: #F3ECE1cc;
+}
+
+.hoursRow:last-child {
+  border-bottom: none;
+}
+
+.hoursRow .day {
+  color: #F3ECE1;
+}
+
+.hoursRow.closed .time {
+  color: #F3ECE155;
+}
+
+.serviceNote {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #F3ECE114;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: #D4B472;
+  }
