@@ -4,6 +4,7 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { projects, type ProjectCategory } from "../data/projects";
 import { useDocumentTitle } from "../lib/useDocumentTitle";
 import "../styles/projects.css";
+import { useSEO } from "../lib/useDocumentTitle";
 
 const filters: ("All" | ProjectCategory)[] = ["All", "Painting", "Screeding", "POP Work", "Interior Job", "Exterior Job"];
 
