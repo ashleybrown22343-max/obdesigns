@@ -5,8 +5,8 @@ import WhyOB from "../components/WhyOB";
 import AboutOB from "../components/AboutOB";
 import PaintStory from "../components/PaintStory";
 import Process from "../components/Process";
-import ProjectConsultation from "../components/ProjectConsultation";
 import Footer from "../components/Footer";
+import StickyCTA from "../components/StickyCTA";
 
 export default function Home() {
   return (
@@ -18,8 +18,8 @@ export default function Home() {
       <AboutOB />
       <PaintStory />
       <Process />
-      <ProjectConsultation />
       <Footer />
+      <StickyCTA />
     </>
   );
 }
