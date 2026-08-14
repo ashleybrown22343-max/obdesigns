@@ -7,10 +7,14 @@ import PaintStory from "../components/PaintStory";
 import Process from "../components/Process";
 import Footer from "../components/Footer";
 import StickyCTA from "../components/StickyCTA";
-import { useDocumentTitle } from "../lib/useDocumentTitle";
+import { useSEO } from "../lib/useDocumentTitle";
 
 export default function Home() {
-  useDocumentTitle("OB Designs & Interiors | Painting, POP, Interiors & Paint");
+  useSEO({
+    title: "OB Designs & Interiors | Painting, POP, Interiors & Paint in Nigeria",
+    description:
+      "OB Designs & Interiors LTD offers painting, screeding, POP work, and interior & exterior design services nationwide in Nigeria. Book a consultation or shop paint & finishes today.",
+  });
 
   return (
     <>
