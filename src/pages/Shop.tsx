@@ -5,6 +5,7 @@ import { useCart } from "../context/CartContext";
 import CartDrawer from "../components/CartDrawer";
 import { useDocumentTitle } from "../lib/useDocumentTitle";
 import "../styles/shop.css";
+import { useSEO } from "../lib/useDocumentTitle";
 
 const categories: ("All" | ProductCategory)[] = ["All", "Panels", "Blinds", "Paint"];
 
@@ -66,8 +67,11 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function Shop() {
-  useDocumentTitle("Shop | OB Designs & Interiors");
-
+  useSEO({
+    title: "Shop Paint, Panels & Blinds | OB Designs & Interiors",
+    description:
+      "Order fluted panels, window blinds, and New Wave paint directly from OB Designs & Interiors — nationwide delivery, checkout via WhatsApp.",
+  });
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState<"All" | ProductCategory>("All");
   const [sort, setSort] = useState<"default" | "low" | "high">("default");
