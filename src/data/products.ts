@@ -1,4 +1,5 @@
 export type PriceUnit = "flat" | "per_length" | "per_sqm";
+export type ProductCategory = "Panels" | "Blinds" | "Paint";
 
 export interface ProductVariant {
   id: string;
@@ -10,6 +11,7 @@ export interface ProductVariant {
 export interface Product {
   id: string;
   name: string;
+  category: ProductCategory;
   variants: ProductVariant[];
 }
 
@@ -17,6 +19,7 @@ export const products: Product[] = [
   {
     id: "fluted-panel",
     name: "Fluted Panel",
+    category: "Panels",
     variants: [
       { id: "fluted-standard", label: "Standard", price: 10500, unit: "flat" },
       { id: "fluted-installed", label: "With installation", price: 15000, unit: "per_length" },
@@ -25,21 +28,25 @@ export const products: Product[] = [
   {
     id: "window-blinds",
     name: "Window Blinds",
+    category: "Blinds",
     variants: [{ id: "blinds-standard", label: "Standard", price: 8500, unit: "flat" }],
   },
   {
     id: "day-night-blinds",
     name: "Day/Night Blinds",
+    category: "Blinds",
     variants: [{ id: "day-night-sqm", label: "Per sqm", price: 8500, unit: "per_sqm" }],
   },
   {
     id: "wooden-venetian",
     name: "Wooden Venetian",
+    category: "Blinds",
     variants: [{ id: "venetian-sqm", label: "Per sqm", price: 14500, unit: "per_sqm" }],
   },
   {
     id: "new-wave-paint",
     name: "New Wave Paint",
+    category: "Paint",
     variants: [{ id: "paint-request", label: "Standard", price: null, unit: "flat" }],
   },
 ];
@@ -53,3 +60,8 @@ export function unitLabel(unit: PriceUnit): string {
 export function formatPrice(price: number | null): string {
   return price === null ? "Price on request" : `₦${price.toLocaleString("en-NG")}`;
 }
+
+export function lowestPrice(product: Product): number | null {
+  const prices = product.variants.map((v) => v.price).filter((p): p is number => p !== null);
+  return prices.length ? Math.min(...prices) : null;
+    }
