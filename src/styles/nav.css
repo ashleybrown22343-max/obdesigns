@@ -1,0 +1,87 @@
+.navHeader {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #F3ECE1;
+  border-bottom: 1px solid #0E0D0C1a;
+  font-family: "Inter", sans-serif;
+}
+
+.navInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLogo {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  color: #0E0D0C;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.navLinks a {
+  color: #0E0D0C;
+  text-decoration: none;
+}
+
+.navCta {
+  background: #0E0D0C;
+  color: #F3ECE1 !important;
+  padding: 0.6rem 1.1rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.navToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0E0D0C;
+}
+
+.navMobileMenu {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #0E0D0C14;
+}
+
+.navMobileMenu a {
+  padding: 1rem 1.5rem;
+  color: #0E0D0C;
+  text-decoration: none;
+  border-bottom: 1px solid #0E0D0C0f;
+  font-size: 0.95rem;
+}
+
+.navMobileMenu .navCta {
+  margin: 1rem 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 780px) {
+  .navLinks {
+    display: none;
+  }
+  .navToggle {
+    display: block;
+  }
+}
+
+@media (min-width: 781px) {
+  .navMobileMenu {
+    display: none !important;
+  }
+}
