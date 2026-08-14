@@ -49,3 +49,7 @@ export function unitLabel(unit: PriceUnit): string {
   if (unit === "per_sqm") return "/sqm";
   return "";
 }
+
+export function formatPrice(price: number | null): string {
+  return price === null ? "Price on request" : `₦${price.toLocaleString("en-NG")}`;
+}
