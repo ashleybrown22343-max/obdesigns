@@ -1,0 +1,132 @@
+.consultPage {
+  background: #0E0D0C;
+  min-height: 100vh;
+}
+
+.consultGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .consultGrid { grid-template-columns: 1fr; }
+}
+
+.consultIntro .eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #B7913C;
+  margin: 0 0 1rem;
+}
+
+.consultIntro h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  color: #F3ECE1;
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+}
+
+.consultIntro p {
+  font-family: "Inter", sans-serif;
+  color: #F3ECE1aa;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+}
+
+.consultPoints {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.consultPoints li {
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  color: #F3ECE1cc;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.consultPoints li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  background: #B7913C;
+}
+
+.consultForm {
+  background: #F3ECE1;
+  padding: 2.25rem;
+}
+
+.consultForm h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.3rem;
+  color: #0E0D0C;
+  margin: 0 0 1.5rem;
+}
+
+.fieldGroup {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fieldGroup label {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #0E0D0C77;
+  margin-bottom: 0.4rem;
+}
+
+.fieldGroup input,
+.fieldGroup textarea {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #0E0D0C22;
+  background: #FFFFFF;
+}
+
+.fieldGroup textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.consultSubmit {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #0E0D0C;
+  color: #F3ECE1;
+  padding: 1rem;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.92rem;
+  border: none;
+  cursor: pointer;
+}
+
+.consultSubmit.disabled {
+  background: #0E0D0C33;
+  color: #0E0D0C77;
+  pointer-events: none;
+  }
