@@ -8,8 +8,11 @@ import "../styles/projects.css";
 const filters: ("All" | ProjectCategory)[] = ["All", "Painting", "Screeding", "POP Work", "Interior Job", "Exterior Job"];
 
 export default function Projects() {
-  useDocumentTitle("Our Projects | OB Designs & Interiors");
-
+  useSEO({
+    title: "Our Projects | OB Designs & Interiors Portfolio",
+    description:
+      "Browse real painting, screeding, POP, interior and exterior projects completed by OB Designs & Interiors nationwide.",
+  });
   const [filter, setFilter] = useState<"All" | ProjectCategory>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
