@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 interface SEOProps {
   title: string;
-  description: string;
+  description?: string;
 }
 
 function setMeta(attr: "name" | "property", key: string, content: string) {
@@ -15,7 +15,7 @@ function setMeta(attr: "name" | "property", key: string, content: string) {
   tag.setAttribute("content", content);
 }
 
-export function useSEO({ title, description }: SEOProps) {
+export function useDocumentTitle({ title, description = "" }: SEOProps) {
   useEffect(() => {
     document.title = title;
 
