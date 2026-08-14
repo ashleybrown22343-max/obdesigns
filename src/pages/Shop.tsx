@@ -3,12 +3,13 @@ import { ShoppingBag } from "lucide-react";
 import { products, lowestPrice, formatPrice, unitLabel, type ProductCategory, type Product } from "../data/products";
 import { useCart } from "../context/CartContext";
 import CartDrawer from "../components/CartDrawer";
+import { useDocumentTitle } from "../lib/useDocumentTitle";
 import "../styles/shop.css";
 
 const categories: ("All" | ProductCategory)[] = ["All", "Panels", "Blinds", "Paint"];
 
 function ProductCard({ product }: { product: Product }) {
-  const { addItem, itemCount } = useCart();
+  const { addItem } = useCart();
   const [variantId, setVariantId] = useState(product.variants[0]?.id);
   const [qty, setQty] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
@@ -42,11 +43,7 @@ function ProductCard({ product }: { product: Product }) {
         {product.variants.length > 1 && (
           <div className="variantRow">
             {product.variants.map((v) => (
-              <button
-                key={v.id}
-                className={`variantChip ${v.id === variantId ? "active" : ""}`}
-                onClick={() => setVariantId(v.id)}
-              >
+              <button key={v.id} className={`variantChip ${v.id === variantId ? "active" : ""}`} onClick={() => setVariantId(v.id)}>
                 {v.label}
               </button>
             ))}
@@ -64,12 +61,13 @@ function ProductCard({ product }: { product: Product }) {
           </button>
         </div>
       </div>
-      {itemCount === 0 && null /* keeps itemCount referenced without altering layout */}
     </div>
   );
 }
 
 export default function Shop() {
+  useDocumentTitle("Shop | OB Designs & Interiors");
+
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState<"All" | ProductCategory>("All");
   const [sort, setSort] = useState<"default" | "low" | "high">("default");
@@ -97,12 +95,7 @@ export default function Shop() {
       </div>
 
       <div className="toolbar">
-        <input
-          className="searchInput"
-          placeholder="Search products..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <input className="searchInput" placeholder="Search products..." value={search} onChange={(e) => setSearch(e.target.value)} />
         <div className="chipRow">
           {categories.map((c) => (
             <button key={c} className={`chip ${category === c ? "active" : ""}`} onClick={() => setCategory(c)}>
@@ -136,4 +129,4 @@ export default function Shop() {
       {drawerOpen && <CartDrawer onClose={() => setDrawerOpen(false)} />}
     </div>
   );
-          }
+}
