@@ -2,9 +2,14 @@ import { Phone, Mail, MapPin, MessageCircle, Facebook, Instagram, Globe } from "
 import { business } from "../data/business";
 import { useDocumentTitle } from "../lib/useDocumentTitle";
 import "../styles/contact.css";
+import { useSEO } from "../lib/useDocumentTitle";
 
 export default function Contact() {
-  useDocumentTitle("Contact | OB Designs & Interiors");
+  useSEO({
+    title: "Contact Us | OB Designs & Interiors",
+    description:
+      "Get in touch with OB Designs & Interiors — call, WhatsApp, or visit us in Mowe, Ogun State. Nationwide service and delivery.",
+  });
 
   return (
     <div className="contactPage">
