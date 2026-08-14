@@ -10,14 +10,18 @@ export default function Nav() {
         <Link to="/" style={{ fontFamily: "Fraunces, serif", fontWeight: 600, color: "#0E0D0C", textDecoration: "none" }}>
           OB Designs
         </Link>
-        <nav style={{ display: "flex", gap: "1.5rem", fontSize: "0.9rem" }}>
-          <a href="/#work" style={{ color: "#0E0D0C", textDecoration: "none" }}>Work</a>
-          <a href="/#services" style={{ color: "#0E0D0C", textDecoration: "none" }}>Services</a>
-          <a href="/#about" style={{ color: "#0E0D0C", textDecoration: "none" }}>About</a>
+        <nav style={{ display: "flex", gap: "1.5rem", alignItems: "center", fontSize: "0.9rem" }}>
+          <Link to="/projects" style={{ color: "#0E0D0C", textDecoration: "none" }}>Projects</Link>
           <Link to="/shop" style={{ color: "#0E0D0C", textDecoration: "none" }}>
             Shop{itemCount > 0 ? ` (${itemCount})` : ""}
           </Link>
           <Link to="/contact" style={{ color: "#0E0D0C", textDecoration: "none" }}>Contact</Link>
+          <Link
+            to="/consultation"
+            style={{ background: "#0E0D0C", color: "#F3ECE1", padding: "0.6rem 1.1rem", textDecoration: "none", fontSize: "0.85rem" }}
+          >
+            Book Consultation
+          </Link>
         </nav>
       </div>
     </header>
