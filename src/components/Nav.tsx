@@ -16,6 +16,7 @@ export default function Nav() {
         </Link>
 
         <nav className="navLinks">
+          <Link to="/">Home</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/shop">Shop{itemCount > 0 ? ` (${itemCount})` : ""}</Link>
           <Link to="/contact">Contact</Link>
@@ -29,6 +30,7 @@ export default function Nav() {
 
       {open && (
         <div className="navMobileMenu">
+          <Link to="/" onClick={() => setOpen(false)}>Home</Link>
           <Link to="/projects" onClick={() => setOpen(false)}>Projects</Link>
           <Link to="/shop" onClick={() => setOpen(false)}>Shop{itemCount > 0 ? ` (${itemCount})` : ""}</Link>
           <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
@@ -37,4 +39,4 @@ export default function Nav() {
       )}
     </header>
   );
-}
+          }
