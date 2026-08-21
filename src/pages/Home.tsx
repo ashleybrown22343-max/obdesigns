@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import FeaturedWork from "../components/FeaturedWork";
+import BeforeAfterTeaser from "../components/BeforeAfterTeaser";
 import Services from "../components/Services";
 import WhyOB from "../components/WhyOB";
 import AboutOB from "../components/AboutOB";
@@ -20,6 +21,7 @@ export default function Home() {
     <>
       <Hero />
       <FeaturedWork />
+      <BeforeAfterTeaser />
       <Services />
       <WhyOB />
       <AboutOB />
