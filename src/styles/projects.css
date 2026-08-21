@@ -202,3 +202,14 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
+
+.beforeAfterGrid {
+  gap: 3.5rem !important;
+}
+
+@media (max-width: 640px) {
+  .beforeAfterGrid {
+    grid-template-columns: 1fr !important;
+    gap: 4rem !important;
+  }
+  }
