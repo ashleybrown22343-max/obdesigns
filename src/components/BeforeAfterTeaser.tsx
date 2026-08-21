@@ -29,7 +29,7 @@ export default function BeforeAfterTeaser() {
           Drag the slider on any photo to see the real difference OB makes.
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "3rem" }}>
           {preview.map((pair) => (
             <BeforeAfterSlider key={pair.id} before={pair.before} after={pair.after} />
           ))}
