@@ -1,0 +1,20 @@
+.serviceDetailPage { background: #F3ECE1; min-height: 100vh; }
+.serviceHero { max-width: 800px; margin: 0 auto; padding: 1rem 1.5rem 2.5rem; }
+.serviceHero .eyebrow { font-family: "Inter", sans-serif; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: #B7913C; margin: 0 0 0.75rem; }
+.serviceHero h1 { font-family: "Fraunces", serif; font-size: clamp(1.9rem, 4.5vw, 2.75rem); color: #0E0D0C; margin: 0 0 1rem; }
+.serviceIntro { font-family: "Inter", sans-serif; color: #0E0D0C99; font-size: 1.05rem; line-height: 1.7; margin: 0; }
+
+.serviceBody { max-width: 800px; margin: 0 auto; padding: 0 1.5rem 5rem; font-family: "Inter", sans-serif; color: #0E0D0Cdd; line-height: 1.75; }
+.serviceBody h2 { font-family: "Fraunces", serif; font-size: 1.4rem; color: #0E0D0C; margin: 2.25rem 0 0.75rem; }
+
+.serviceGallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.serviceGallery figure { margin: 0; }
+.serviceGallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.serviceGallery figcaption { font-size: 0.78rem; color: #0E0D0C77; margin-top: 0.4rem; }
+
+.serviceContactRow { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.serviceContactBtn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.3rem; border: 1px solid #0E0D0C22; color: #0E0D0C; text-decoration: none; font-size: 0.88rem; }
+.serviceContactBtn.whatsapp { background: #0E0D0C; color: #F3ECE1; border-color: #0E0D0C; }
+
+.serviceCtaBanner { margin-top: 2.5rem; text-align: center; }
+.serviceCtaBtn { display: inline-block; background: #B7913C; color: #0E0D0C; font-weight: 600; padding: 1rem 2.25rem; text-decoration: none; font-size: 0.95rem; }
