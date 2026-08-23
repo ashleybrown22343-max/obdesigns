@@ -1,26 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { useCart } from "../context/CartContext";
 import "../styles/nav.css";
 
 export default function Nav() {
-  const { itemCount } = useCart();
   const [open, setOpen] = useState(false);
 
   return (
     <header className="navHeader">
       <div className="navInner">
         <Link to="/" className="navLogo" onClick={() => setOpen(false)}>
-          OB Designs
+          OB Designs & Interiors LTD
         </Link>
 
         <nav className="navLinks">
           <Link to="/">Home</Link>
+          <Link to="/services">Services</Link>
           <Link to="/projects">Projects</Link>
-          <Link to="/shop">Shop{itemCount > 0 ? ` (${itemCount})` : ""}</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="/consultation" className="navCta">Book Consultation</Link>
+          <Link to="/consultation" className="navCta">Request a Free Quote</Link>
         </nav>
 
         <button className="navToggle" onClick={() => setOpen((v) => !v)} aria-label={open ? "Close menu" : "Open menu"}>
@@ -31,12 +29,12 @@ export default function Nav() {
       {open && (
         <div className="navMobileMenu">
           <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
           <Link to="/projects" onClick={() => setOpen(false)}>Projects</Link>
-          <Link to="/shop" onClick={() => setOpen(false)}>Shop{itemCount > 0 ? ` (${itemCount})` : ""}</Link>
           <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
-          <Link to="/consultation" className="navCta" onClick={() => setOpen(false)}>Book Consultation</Link>
+          <Link to="/consultation" className="navCta" onClick={() => setOpen(false)}>Request a Free Quote</Link>
         </div>
       )}
     </header>
   );
-          }
+}
