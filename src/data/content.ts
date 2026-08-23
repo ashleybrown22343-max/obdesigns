@@ -1,9 +1,9 @@
 export const services = [
-  { name: "Painting", description: "Interior and exterior painting, finished to a high standard." },
-  { name: "Screeding", description: "Floor screeding for a smooth, durable finish." },
-  { name: "POP Work", description: "POP ceiling and wall installations." },
-  { name: "Interior Job", description: "Full interior design and decorating." },
-  { name: "Exterior Job", description: "Exterior finishing and façade work." },
+  { name: "Painting", slug: "painters-in-nigeria", description: "Interior and exterior painting, finished to a high standard." },
+  { name: "Screeding", slug: "floor-screeding-nigeria", description: "Floor screeding for a smooth, durable finish." },
+  { name: "POP Installations", slug: "pop-ceiling-installation-nigeria", description: "POP ceiling and wall installations." },
+  { name: "Interiors", slug: "interior-designers-in-nigeria", description: "Full interior design and decorating." },
+  { name: "Exteriors", slug: "exterior-painting-nigeria", description: "Exterior finishing and façade work." },
 ];
 
 export const whyOB = [
