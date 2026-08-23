@@ -30,13 +30,13 @@ export default function Hero() {
         </p>
 
         <div className="heroButtons">
-          <Link to="/consultation" className="heroBtnPrimary">
-            Book Consultation →
-          </Link>
-          <Link to="/shop" className="heroBtnSecondary">
-            Shop Now
-          </Link>
-        </div>
+  <Link to="/consultation" className="heroBtnPrimary">
+    Request a Free Quote →
+  </Link>
+  <Link to="/projects" className="heroBtnSecondary">
+    View Our Projects
+  </Link>
+</div>
       </motion.div>
     </section>
   );
