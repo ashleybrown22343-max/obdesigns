@@ -85,3 +85,9 @@
     display: none !important;
   }
 }
+
+@media (max-width: 480px) {
+  .navLogo {
+    font-size: 0.8rem;
+  }
+}
