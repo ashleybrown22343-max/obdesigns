@@ -1,0 +1,256 @@
+.realEstatePage {
+  background: var(--off-white);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 5rem;
+}
+
+.realEstateHero {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 2rem;
+}
+
+.realEstateHero .eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.realEstateHero .heroAccentLine {
+  width: 56px;
+  height: 4px;
+  background: var(--red);
+  margin: 0 0 1.5rem;
+}
+
+.realEstateHero h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--black);
+  margin: 0 0 1rem;
+  max-width: 18ch;
+}
+
+.realEstateHero p {
+  font-size: 1.1rem;
+  color: rgba(14, 13, 12, 0.7);
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+.realEstateServiceSection {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.realEstateServiceSection h2, 
+.realEstateProjectsSection h2 {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+
+.realEstateServiceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.realEstateServiceCard {
+  background: #FFFFFF;
+  border: 1px solid rgba(14, 13, 12, 0.1);
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.realEstateProjectsSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.estateCard {
+  background: #FFFFFF;
+  border: 1px solid rgba(14, 13, 12, 0.1);
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.estateImageWrap {
+  background: #0E0D0C0d;
+}
+
+.estateImageWrap img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+}
+
+.estateContent {
+  padding: 2.5rem;
+}
+
+.estateTitle {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  color: var(--black);
+  margin: 0 0 0.5rem;
+}
+
+.estateLocation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(14, 13, 12, 0.6);
+  margin: 0 0 2rem;
+}
+
+.estateSizes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .estateSizes { grid-template-columns: 1fr; }
+}
+
+.sizeBlock {
+  border: 1px solid rgba(14, 13, 12, 0.15);
+  background: var(--off-white);
+  padding: 1.5rem;
+}
+
+.sizeHeading {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  color: var(--red);
+  margin: 0 0 1rem;
+}
+
+.planList {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.planRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed rgba(14, 13, 12, 0.2);
+}
+
+.planPrice {
+  font-weight: 700;
+  color: var(--black);
+}
+
+.estateFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.featureTag {
+  background: rgba(241, 196, 15, 0.15);
+  color: var(--black);
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(241, 196, 15, 0.5);
+}
+
+.estateCtaRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.realEstateBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.realEstateBtn.whatsapp {
+  border: 1px solid var(--black);
+  color: var(--black);
+  background: transparent;
+}
+
+.realEstateBtn.whatsapp:hover {
+  border-color: var(--gold);
+  color: var(--black);
+  background: rgba(241, 196, 15, 0.1);
+}
+
+.realEstateBtn.primary {
+  background: var(--red);
+  color: var(--off-white);
+}
+
+.realEstateBtn.primary:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.realEstateBottomCta {
+  max-width: 1000px;
+  margin: 4rem auto 0;
+  padding: 3rem;
+  background: var(--black);
+  border: 2px solid var(--gold);
+  text-align: center;
+  color: var(--off-white);
+}
+
+.realEstateBottomCta h2 {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  color: var(--gold);
+  margin: 0 0 1rem;
+}
+
+.realEstateBottomCta p {
+  font-size: 1rem;
+  color: rgba(243, 236, 225, 0.8);
+  margin: 0 0 2rem;
+}
+
+.realEstateCallBtn {
+  background: var(--red);
+  color: var(--off-white);
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.realEstateCallBtn:hover {
+  background: var(--gold);
+  color: var(--black);
+    }
