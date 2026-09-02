@@ -1,0 +1,281 @@
+/* =============================
+   OB Designs & Interiors
+   Services Hub & Detail Styles
+   ============================= */
+
+.servicesPage {
+  background: var(--off-white);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 5rem;
+}
+
+/* Hero Section */
+.servicesHero {
+  padding: 5rem 1.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.heroAccentLine {
+  width: 56px;
+  height: 4px;
+  background: var(--red);
+  margin: 0 0 1.5rem;
+}
+
+.servicesHero h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.05;
+  color: var(--black);
+  margin: 0 0 1rem;
+}
+
+.servicesHero p {
+  font-size: 1.1rem;
+  color: rgba(14, 13, 12, 0.7);
+  max-width: 60ch;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Cards Grid */
+.servicesGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border: 1px solid rgba(14, 13, 12, 0.1);
+  text-decoration: none;
+  color: var(--black);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--red);
+}
+
+.serviceCard:hover {
+  border-top-color: var(--gold);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -15px rgba(14, 13, 12, 0.2);
+}
+
+.serviceCardContent {
+  padding: 1.75rem;
+}
+
+.serviceCardTitle {
+  font-family: "Fraunces", serif;
+  font-size: 1.3rem;
+  color: var(--black);
+  margin: 0 0 0.75rem;
+}
+
+.serviceCardDesc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(14, 13, 12, 0.7);
+  margin: 0;
+}
+
+.serviceCardBtn {
+  background: var(--black);
+  color: var(--off-white);
+  padding: 1rem 1.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.serviceCard:hover .serviceCardBtn {
+  background: var(--red);
+}
+
+/* Detail Page */
+.serviceDetailPage {
+  background: var(--off-white);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 5rem;
+}
+
+.serviceDetailHero {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 2.5rem;
+}
+
+.serviceDetailHero h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  color: var(--black);
+  margin: 0 0 1rem;
+}
+
+.serviceDetailIntro {
+  font-size: 1.1rem;
+  color: rgba(14, 13, 12, 0.8);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.serviceDetailBody {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.serviceMainContent h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  color: var(--black);
+  margin: 2.5rem 0 1rem;
+}
+
+.serviceMainContent p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(14, 13, 12, 0.8);
+}
+
+.serviceFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.serviceFeatures li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--black);
+}
+
+.serviceContactRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.serviceContactBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border: 1px solid rgba(14, 13, 12, 0.3);
+  color: var(--black);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.serviceContactBtn:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.serviceContactBtn.whatsapp {
+  background: var(--black);
+  color: var(--off-white);
+  border-color: var(--black);
+}
+
+.serviceContactBtn.whatsapp:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+/* Gallery */
+.serviceGallerySection {
+  margin-top: 4rem;
+}
+
+.serviceGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.serviceGallery figure {
+  margin: 0;
+  border: 1px solid rgba(14, 13, 12, 0.1);
+}
+
+.serviceGallery img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.serviceGallery figcaption {
+  font-size: 0.8rem;
+  color: rgba(14, 13, 12, 0.7);
+  padding: 0.75rem;
+}
+
+/* CTA Banner */
+.serviceCtaBanner {
+  margin-top: 4rem;
+  background: linear-gradient(135deg, var(--black) 0%, var(--red) 100%);
+  border: 2px solid var(--gold);
+  padding: 3rem;
+  text-align: center;
+  color: var(--off-white);
+}
+
+.serviceCtaBanner h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem;
+}
+
+.serviceCtaBanner p {
+  font-size: 1rem;
+  color: rgba(243, 236, 225, 0.8);
+  margin: 0 0 2rem;
+}
+
+.serviceCtaBtn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  padding: 1rem 2.25rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.serviceCtaBtn:hover {
+  background: var(--off-white);
+  }
