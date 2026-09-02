@@ -1,8 +1,8 @@
-import { Phone, Mail, MapPin, MessageCircle, Facebook, Instagram, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Phone, Mail, MapPin, MessageCircle, Facebook, Instagram, Globe, Clock } from "lucide-react";
 import { business } from "../data/business";
-import { useDocumentTitle } from "../lib/useDocumentTitle";
-import "../styles/contact.css";
 import { useSEO } from "../lib/useDocumentTitle";
+import "../styles/contact.css";
 
 export default function Contact() {
   useSEO({
@@ -15,6 +15,7 @@ export default function Contact() {
     <div className="contactPage">
       <div className="contactHero">
         <p className="eyebrow">Contact</p>
+        <div className="heroAccentLine" />
         <h1>Let's talk about your project</h1>
         <p>
           Reach out directly, or send a message on WhatsApp — {business.legalName} serves
@@ -24,7 +25,7 @@ export default function Contact() {
       </div>
 
       <div className="contactGrid">
-        <div className="panel">
+        <div className="panel lightPanel">
           <p className="panelLabel">Get in touch</p>
           <ul className="contactList">
             <li>
@@ -69,8 +70,8 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="panel">
-          <p className="panelLabel">Opening hours</p>
+        <div className="panel darkPanel">
+          <p className="panelLabel"><Clock size={14} style={{ marginRight: '6px', verticalAlign: 'middle' }} /> Opening hours</p>
           <ul className="hoursList">
             {business.hours.map((h) => (
               <li key={h.day} className={`hoursRow ${h.time === "Closed" ? "closed" : ""}`}>
@@ -82,6 +83,22 @@ export default function Contact() {
           <p className="serviceNote">{business.serviceArea}</p>
         </div>
       </div>
+
+      {/* Custom CTA Section - Breaks the template feel */}
+      <div className="contactCtaBanner">
+        <div className="contactCtaInner">
+          <h2>Prefer a quick quote?</h2>
+          <p>Send us a message on WhatsApp and we’ll respond with pricing details or schedule a site visit.</p>
+          <div className="contactCtaButtons">
+            <a href={`https://wa.me/${business.phoneWhatsApp}`} target="_blank" rel="noreferrer" className="ctaBtnWhatsapp">
+              <MessageCircle size={18} /> Chat on WhatsApp
+            </a>
+            <Link to="/consultation" className="ctaBtnConsultation">
+              Request a Free Quote →
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+              }
