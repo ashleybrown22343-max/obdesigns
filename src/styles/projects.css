@@ -1,12 +1,14 @@
 .projectsPage {
-  background: #F3ECE1;
+  background: var(--off-white);
   min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 5rem;
 }
 
 .projectsHero {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1.5rem 2rem;
+  padding: 5rem 1.5rem 2rem;
 }
 
 .projectsHero .eyebrow {
@@ -14,24 +16,59 @@
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #B7913C;
-  margin: 0 0 0.75rem;
+  color: var(--red);
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.projectsHero .heroAccentLine {
+  width: 56px;
+  height: 4px;
+  background: var(--red);
+  margin: 0 0 1.5rem;
 }
 
 .projectsHero h1 {
   font-family: "Fraunces", serif;
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  color: #0E0D0C;
-  margin: 0 0 0.75rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--black);
+  margin: 0 0 1rem;
   max-width: 16ch;
 }
 
 .projectsHero p {
   font-family: "Inter", sans-serif;
-  color: #0E0D0C88;
-  font-size: 1rem;
+  color: rgba(14, 13, 12, 0.7);
+  font-size: 1.1rem;
   max-width: 48ch;
+  line-height: 1.7;
   margin: 0;
+}
+
+.tabRow {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tabBtn {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  padding: 0.6rem 0.2rem;
+  border: none;
+  background: none;
+  color: rgba(14, 13, 12, 0.4);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-right: 1.5rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tabBtn.active {
+  color: var(--black);
+  border-bottom-color: var(--red);
 }
 
 .filterRow {
@@ -43,7 +80,7 @@
   flex-wrap: wrap;
   position: sticky;
   top: 65px;
-  background: #F3ECE1;
+  background: var(--off-white);
   z-index: 20;
   padding-top: 1rem;
 }
@@ -52,17 +89,22 @@
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   padding: 0.55rem 1.1rem;
-  border: 1px solid #0E0D0C22;
+  border: 1px solid rgba(14, 13, 12, 0.15);
   background: transparent;
-  color: #0E0D0C;
+  color: var(--black);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .filterChip.active {
-  background: #0E0D0C;
-  color: #F3ECE1;
-  border-color: #0E0D0C;
+  background: var(--red);
+  color: var(--off-white);
+  border-color: var(--red);
+}
+
+.filterChip:hover {
+  border-color: var(--gold);
+  color: var(--red);
 }
 
 .masonry {
@@ -86,7 +128,13 @@
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  background: #0E0D0C0d;
+  background: rgba(14, 13, 12, 0.05);
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.masonryItem:hover {
+  border-color: var(--gold);
 }
 
 .masonryItem img {
@@ -103,8 +151,8 @@
   position: absolute;
   bottom: 0.75rem;
   left: 0.75rem;
-  background: #0E0D0Cd9;
-  color: #F3ECE1;
+  background: rgba(14, 13, 12, 0.85);
+  color: var(--off-white);
   font-family: "Inter", sans-serif;
   font-size: 0.68rem;
   letter-spacing: 0.06em;
@@ -115,7 +163,7 @@
 .lightboxBackdrop {
   position: fixed;
   inset: 0;
-  background: #0E0D0Cf2;
+  background: rgba(14, 13, 12, 0.95);
   z-index: 100;
   display: flex;
   align-items: center;
@@ -134,7 +182,7 @@
   position: absolute;
   background: none;
   border: none;
-  color: #F3ECE1;
+  color: var(--off-white);
   cursor: pointer;
 }
 
@@ -153,45 +201,34 @@
   text-align: center;
 }
 
+.ctaBanner h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.75rem;
+  color: var(--black);
+  margin: 0 0 0.5rem;
+}
+
 .ctaBanner p {
   font-family: "Inter", sans-serif;
-  color: #0E0D0C99;
-  margin: 0 0 1.25rem;
+  color: rgba(14, 13, 12, 0.7);
+  margin: 0 0 1.5rem;
 }
 
 .ctaBannerBtn {
   display: inline-block;
-  background: #0E0D0C;
-  color: #F3ECE1;
+  background: var(--red);
+  color: var(--off-white);
   padding: 0.9rem 2rem;
   text-decoration: none;
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
-  }
-
-.tabRow {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem 1.5rem;
-  display: flex;
-  gap: 0.5rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
 }
 
-.tabBtn {
-  font-family: "Fraunces", serif;
-  font-size: 1rem;
-  padding: 0.6rem 0.2rem;
-  border: none;
-  background: none;
-  color: #0E0D0C77;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-right: 1.5rem;
-}
-
-.tabBtn.active {
-  color: #0E0D0C;
-  border-bottom-color: #B7913C;
+.ctaBannerBtn:hover {
+  background: var(--gold);
+  color: var(--black);
 }
 
 .beforeAfterGrid {
@@ -200,11 +237,7 @@
   padding: 0 1.5rem 6rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.beforeAfterGrid {
-  gap: 3.5rem !important;
+  gap: 3.5rem;
 }
 
 @media (max-width: 640px) {
