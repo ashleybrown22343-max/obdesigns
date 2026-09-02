@@ -8,7 +8,6 @@ export default function Hero() {
     <section className="heroSection">
       <img src="/images/ob/hero-1.jpg" alt="OB Designs & Interiors project" className="heroBg" />
       <div className="heroOverlay" />
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -16,27 +15,23 @@ export default function Hero() {
         className="heroContent"
       >
         <p className="heroEyebrow">Interiors · Painting · Finishing</p>
-
         <h1 className="heroTitle">
           Spaces designed to feel like <span className="accent">yours.</span>
         </h1>
-
         <div className="heroAccentLine" />
-
         <p className="heroSubtext">
           {business.legalName} delivers exceptional interior and exterior solutions with
           quality materials, careful execution, and personal supervision —{" "}
           {business.yearsActive} years active, {business.serviceArea.toLowerCase()}.
         </p>
-
         <div className="heroButtons">
-  <Link to="/consultation" className="heroBtnPrimary">
-    Request a Free Quote →
-  </Link>
-  <Link to="/projects" className="heroBtnSecondary">
-    View Our Projects
-  </Link>
-</div>
+          <Link to="/consultation" className="heroBtnPrimary">
+            Request a Free Quote →
+          </Link>
+          <Link to="/projects" className="heroBtnSecondary">
+            View Our Projects
+          </Link>
+        </div>
       </motion.div>
     </section>
   );
