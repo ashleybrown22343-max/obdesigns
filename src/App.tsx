@@ -6,6 +6,7 @@ import Consultation from "./pages/Consultation";
 import Contact from "./pages/Contact";
 import ServicesHub from "./pages/ServicesHub";
 import ServiceDetail from "./pages/ServiceDetail";
+import RealEstate from "./pages/RealEstate";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -15,12 +16,12 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesHub />} />
+        <Route path="/real-estate" element={<RealEstate />} />
         <Route path="/painters-in-nigeria" element={<ServiceDetail slug="painters-in-nigeria" />} />
         <Route path="/house-painting-services-nigeria" element={<ServiceDetail slug="house-painting-services-nigeria" />} />
         <Route path="/exterior-painting-nigeria" element={<ServiceDetail slug="exterior-painting-nigeria" />} />
         <Route path="/interior-designers-in-nigeria" element={<ServiceDetail slug="interior-designers-in-nigeria" />} />
         <Route path="/pop-ceiling-installation-nigeria" element={<ServiceDetail slug="pop-ceiling-installation-nigeria" />} />
-        {/* CHANGED SLUG: Floor -> Wall screeding */}
         <Route path="/wall-screeding-nigeria" element={<ServiceDetail slug="wall-screeding-nigeria" />} />
         <Route path="/new-wave-emulsion-paint-nigeria" element={<ServiceDetail slug="new-wave-emulsion-paint-nigeria" />} />
         <Route path="/projects" element={<Projects />} />
@@ -30,4 +31,4 @@ export default function App() {
       </Routes>
     </BrowserRouter>
   );
-      }
+}
