@@ -20,7 +20,8 @@ export default function App() {
         <Route path="/exterior-painting-nigeria" element={<ServiceDetail slug="exterior-painting-nigeria" />} />
         <Route path="/interior-designers-in-nigeria" element={<ServiceDetail slug="interior-designers-in-nigeria" />} />
         <Route path="/pop-ceiling-installation-nigeria" element={<ServiceDetail slug="pop-ceiling-installation-nigeria" />} />
-        <Route path="/floor-screeding-nigeria" element={<ServiceDetail slug="floor-screeding-nigeria" />} />
+        {/* CHANGED SLUG: Floor -> Wall screeding */}
+        <Route path="/wall-screeding-nigeria" element={<ServiceDetail slug="wall-screeding-nigeria" />} />
         <Route path="/new-wave-emulsion-paint-nigeria" element={<ServiceDetail slug="new-wave-emulsion-paint-nigeria" />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/consultation" element={<Consultation />} />
@@ -29,4 +30,4 @@ export default function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+      }
