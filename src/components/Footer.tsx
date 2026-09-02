@@ -12,7 +12,6 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      {/* Top CTA Banner */}
       <div className="footerCtaBanner">
         <div className="footerCtaInner">
           <h2 className="footerCtaTitle">Ready to transform your space?</h2>
@@ -21,11 +20,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Main Footer Grid */}
       <div className="footerMain">
         <div className="footerGrid">
           
-          {/* Brand Column */}
           <div className="footerCol brandCol">
             <div className="footerBrand">
               <img src="/images/ob/logo-1.jpg" alt="OB Designs & Interiors" className="footerLogo" />
@@ -45,57 +42,42 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links Column */}
           <div className="footerCol">
             <h3 className="footerHeading">Quick Links</h3>
             <ul className="footerLinks">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/services">Services</Link></li>
+              <li><Link to="/real-estate">Real Estate</Link></li>
               <li><Link to="/projects">Projects</Link></li>
               <li><Link to="/consultation">Consultation</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Services Column */}
           <div className="footerCol">
             <h3 className="footerHeading">Our Services</h3>
             <ul className="footerLinks">
               <li><Link to="/painters-in-nigeria">Painting</Link></li>
-              <li><Link to="/floor-screeding-nigeria">Screeding</Link></li>
+              <li><Link to="/wall-screeding-nigeria">Wall Screeding</Link></li>
               <li><Link to="/pop-ceiling-installation-nigeria">POP Installations</Link></li>
               <li><Link to="/interior-designers-in-nigeria">Interiors</Link></li>
               <li><Link to="/exterior-painting-nigeria">Exteriors</Link></li>
             </ul>
           </div>
 
-          {/* Contact Info Column */}
           <div className="footerCol">
             <h3 className="footerHeading">Get In Touch</h3>
             <ul className="footerContactList">
-              <li>
-                <MapPin size={16} className="icon" />
-                <span>{business.address}</span>
-              </li>
-              <li>
-                <Phone size={16} className="icon" />
-                <a href={`tel:+${business.phoneWhatsApp}`}>{business.phoneDisplay}</a>
-              </li>
-              <li>
-                <Mail size={16} className="icon" />
-                <a href={`mailto:${business.email}`}>{business.email}</a>
-              </li>
-              <li>
-                <MessageCircle size={16} className="icon" />
-                <a href={`https://wa.me/${business.phoneWhatsApp}`} target="_blank" rel="noreferrer">WhatsApp Us</a>
-              </li>
+              <li><MapPin size={16} className="icon" /><span>{business.address}</span></li>
+              <li><Phone size={16} className="icon" /><a href={`tel:+${business.phoneWhatsApp}`}>{business.phoneDisplay}</a></li>
+              <li><Mail size={16} className="icon" /><a href={`mailto:${business.email}`}>{business.email}</a></li>
+              <li><MessageCircle size={16} className="icon" /><a href={`https://wa.me/${business.phoneWhatsApp}`} target="_blank" rel="noreferrer">WhatsApp Us</a></li>
             </ul>
           </div>
 
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="footerBottom">
         <div className="footerBottomInner">
           <p>© {currentYear} {business.legalName}. All rights reserved.</p>
