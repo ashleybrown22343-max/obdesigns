@@ -11,7 +11,7 @@ export default function Nav() {
       <div className="navInner">
         <Link to="/" className="navLogo" onClick={() => setOpen(false)}>
           <img src="/images/ob/logo-1.jpg" alt="OB Designs & Interiors" className="navLogoImg" />
-          <span className="navLogoText">OB Designs & Interiors</span>
+          <span className="navLogoText">OB Designs & Interiors LTD</span>
         </Link>
 
         <nav className="navLinks">
