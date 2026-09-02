@@ -11,7 +11,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          style={{ fontFamily: "Fraunces, serif", fontSize: "clamp(1.5rem, 4vw, 2.25rem)", marginBottom: "2.5rem" }}
+          style={{ fontFamily: "Fraunces, serif", fontSize: "clamp(1.5rem, 4vw, 2.25rem)", marginBottom: "2.5rem", color: "var(--black)" }}
         >
           What We Do
         </motion.h2>
@@ -25,9 +25,21 @@ export default function Services() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
             >
-              <Link to={`/${s.slug}`} style={{ display: "block", borderTop: "2px solid #B7913C", paddingTop: "1.1rem", textDecoration: "none", color: "inherit" }}>
-                <h3 style={{ fontFamily: "Fraunces, serif", fontSize: "1.15rem", margin: "0 0 0.5rem" }}>{s.name}</h3>
-                <p style={{ fontFamily: "Inter, sans-serif", fontSize: "0.88rem", color: "#0E0D0C99", margin: 0, lineHeight: 1.6 }}>{s.description}</p>
+              <Link 
+                to={`/${s.slug}`} 
+                style={{ 
+                  display: "block", 
+                  borderTop: "3px solid var(--red)", 
+                  paddingTop: "1.1rem", 
+                  textDecoration: "none", 
+                  color: "inherit",
+                  transition: "border-color 0.2s ease"
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.borderTopColor = "var(--gold)"}
+                onMouseLeave={(e) => e.currentTarget.style.borderTopColor = "var(--red)"}
+              >
+                <h3 style={{ fontFamily: "Fraunces, serif", fontSize: "1.15rem", margin: "0 0 0.5rem", color: "var(--black)" }}>{s.name}</h3>
+                <p style={{ fontFamily: "Inter, sans-serif", fontSize: "0.88rem", color: "rgba(14, 13, 12, 0.6)", margin: 0, lineHeight: 1.6 }}>{s.description}</p>
               </Link>
             </motion.div>
           ))}
@@ -35,4 +47,4 @@ export default function Services() {
       </div>
     </section>
   );
-                            }
+                }
