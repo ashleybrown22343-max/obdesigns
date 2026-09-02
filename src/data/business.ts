@@ -6,7 +6,9 @@ export const business = {
   email: "Obinteriors555@gmail.com",
   yearsActive: 6,
   staff: { core: 4, contractSkilled: 20 },
-  serviceArea: "Nationwide service and nationwide delivery",
+  // Changed to include high-intent local SEO keywords
+  serviceArea: "Serving Mowe, Ogun State, Lagos, Ibadan & nationwide in Nigeria",
+  localCities: ["Mowe", "Ogun State", "Lagos", "Ibadan", "Abeokuta", "Nigeria"],
   social: {
     facebook: "https://www.facebook.com/share/1BAd2ZoSzp/",
     instagram: null as string | null,
