@@ -17,6 +17,7 @@ export default function Nav() {
         <nav className="navLinks">
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
+          <Link to="/real-estate">Real Estate</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/consultation" className="navCta">Request a Free Quote</Link>
@@ -31,6 +32,7 @@ export default function Nav() {
         <div className="navMobileMenu">
           <Link to="/" onClick={() => setOpen(false)}>Home</Link>
           <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
+          <Link to="/real-estate" onClick={() => setOpen(false)}>Real Estate</Link>
           <Link to="/projects" onClick={() => setOpen(false)}>Projects</Link>
           <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
           <Link to="/consultation" className="navCta" onClick={() => setOpen(false)}>Request a Free Quote</Link>
