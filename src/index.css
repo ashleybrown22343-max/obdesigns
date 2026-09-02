@@ -1,3 +1,17 @@
+/* =============================
+   OB Designs & Interiors
+   Global styles & brand colors
+   ============================= */
+
+:root {
+  --black: #0E0D0C;
+  --off-white: #F3ECE1;
+  --gold: #F1C40F;      /* from logo outline */
+  --red: #E53935;       /* from logo roof */
+  --gold-soft: #D4B472; /* for subtle gradients / shadows */
+  --black-soft: #1A1918;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,4 +23,22 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
+  background: var(--off-white);
+  color: var(--black);
+  font-family: "Inter", sans-serif;
+}
+
+/* Optional: custom scrollbar to feel branded */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red);
 }
