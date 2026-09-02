@@ -1,8 +1,16 @@
+/* =============================
+   OB Designs & Interiors
+   World-Class Contact Page
+   ============================= */
+
 .contactPage {
-  background: #F3ECE1;
+  background: var(--off-white);
   min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 4rem;
 }
 
+/* Hero Section */
 .contactHero {
   padding: 5rem 1.5rem 3rem;
   max-width: 1200px;
@@ -14,37 +22,46 @@
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #B7913C;
+  color: var(--red);
   margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.heroAccentLine {
+  width: 56px;
+  height: 4px;
+  background: var(--red);
+  margin: 0 0 1.5rem;
 }
 
 .contactHero h1 {
   font-family: "Fraunces", serif;
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  line-height: 1.08;
-  color: #0E0D0C;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.05;
+  color: var(--black);
   margin: 0 0 1rem;
-  max-width: 20ch;
+  max-width: 18ch;
 }
 
 .contactHero p {
   font-family: "Inter", sans-serif;
-  font-size: 1.05rem;
-  color: #0E0D0C99;
-  max-width: 42ch;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  color: rgba(14, 13, 12, 0.7);
+  max-width: 48ch;
+  line-height: 1.7;
   margin: 0;
 }
 
+/* Grid Layout */
 .contactGrid {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem 5rem;
+  padding: 0 1.5rem;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 1px;
-  background: #0E0D0C14;
-  border: 1px solid #0E0D0C14;
+  background: rgba(14, 13, 12, 0.1);
+  border: 1px solid rgba(14, 13, 12, 0.1);
 }
 
 @media (max-width: 860px) {
@@ -53,13 +70,18 @@
   }
 }
 
+/* Panels */
 .panel {
-  background: #FAF7F2;
-  padding: 2.75rem 2.25rem;
+  padding: 3rem;
 }
 
-.panel + .panel {
-  background: #0E0D0C;
+.lightPanel {
+  background: #FFFFFF;
+}
+
+.darkPanel {
+  background: var(--black);
+  color: var(--off-white);
 }
 
 .panelLabel {
@@ -67,41 +89,47 @@
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #B7913C;
-  margin: 0 0 1.75rem;
+  color: var(--gold);
+  margin: 0 0 2rem;
+  display: flex;
+  align-items: center;
 }
 
+/* Contact List */
 .contactList {
   list-style: none;
   margin: 0 0 2.5rem;
   padding: 0;
   display: grid;
-  gap: 1.4rem;
+  gap: 1.5rem;
 }
 
 .contactRow {
   display: flex;
   align-items: flex-start;
-  gap: 0.9rem;
+  gap: 1rem;
   text-decoration: none;
-  color: #0E0D0C;
+  color: var(--black);
 }
 
 .contactRow .iconWrap {
   flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  border: 1px solid #0E0D0C22;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(14, 13, 12, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  color: var(--red);
+  transition: all 0.2s ease;
 }
 
 .contactRow:hover .iconWrap {
-  border-color: #B7913C;
-  background: #B7913C11;
+  border-color: var(--red);
+  background: var(--red);
+  color: var(--off-white);
+  transform: translateY(-2px);
 }
 
 .contactRow .label {
@@ -109,57 +137,56 @@
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #0E0D0C66;
+  color: rgba(14, 13, 12, 0.5);
   margin: 0 0 0.15rem;
   display: block;
 }
 
 .contactRow .value {
   font-family: "Fraunces", serif;
-  font-size: 1.05rem;
-  color: #0E0D0C;
+  font-size: 1.1rem;
+  color: var(--black);
 }
 
+/* Social Icons */
 .socialRow {
   display: flex;
   gap: 0.75rem;
-  margin-top: 0.5rem;
 }
 
 .socialIcon {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid #0E0D0C22;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(14, 13, 12, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0E0D0C;
+  color: var(--black);
   transition: all 0.2s ease;
 }
 
 .socialIcon:hover {
-  background: #0E0D0C;
-  border-color: #0E0D0C;
-  color: #F3ECE1;
-  transform: translateY(-2px);
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+  transform: translateY(-3px);
 }
 
-/* dark hours panel */
+/* Hours (Dark Panel) */
 .hoursList {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
 }
 
 .hoursRow {
   display: flex;
   justify-content: space-between;
-  padding: 0.7rem 0;
-  border-bottom: 1px solid #F3ECE114;
-  color: #F3ECE1cc;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(243, 236, 225, 0.1);
+  color: rgba(243, 236, 225, 0.8);
+  font-size: 0.95rem;
 }
 
 .hoursRow:last-child {
@@ -167,18 +194,111 @@
 }
 
 .hoursRow .day {
-  color: #F3ECE1;
+  color: var(--off-white);
+  font-weight: 500;
+}
+
+.hoursRow .time {
+  color: var(--gold);
 }
 
 .hoursRow.closed .time {
-  color: #F3ECE155;
+  color: rgba(243, 236, 225, 0.3);
+  text-decoration: line-through;
 }
 
 .serviceNote {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #F3ECE114;
-  font-family: "Inter", sans-serif;
+  border-top: 1px solid rgba(243, 236, 225, 0.1);
   font-size: 0.85rem;
-  color: #D4B472;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* CTA Banner Section */
+.contactCtaBanner {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.contactCtaInner {
+  background: linear-gradient(135deg, var(--black) 0%, var(--red) 100%);
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  border: 2px solid var(--gold);
+}
+
+.contactCtaInner h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--off-white);
+  margin: 0 0 0.5rem;
+}
+
+.contactCtaInner p {
+  font-size: 1rem;
+  color: rgba(243, 236, 225, 0.8);
+  margin: 0 0 2rem;
+  max-width: 50ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contactCtaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaBtnWhatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--off-white);
+  color: var(--black);
+  padding: 0.9rem 1.8rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.ctaBtnWhatsapp:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+}
+
+.ctaBtnConsultation {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(243, 236, 225, 0.4);
+  color: var(--off-white);
+  padding: 0.9rem 1.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.ctaBtnConsultation:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .contactHero {
+    padding-top: 3rem;
+  }
+  .panel {
+    padding: 2rem;
+  }
+  .contactCtaInner {
+    padding: 2rem 1.5rem;
+  }
   }
