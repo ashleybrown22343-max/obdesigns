@@ -10,10 +10,10 @@ export default function PaintStory() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 style={{ fontFamily: "Fraunces, serif", fontSize: "clamp(1.5rem, 4vw, 2.25rem)", marginBottom: "1rem" }}>
+          <h2 style={{ fontFamily: "Fraunces, serif", fontSize: "clamp(1.5rem, 4vw, 2.25rem)", marginBottom: "1rem", color: "var(--black)" }}>
             New Wave Paint
           </h2>
-          <p style={{ fontFamily: "Inter, sans-serif", fontSize: "1rem", lineHeight: 1.7, color: "#0E0D0Ccc", maxWidth: "40rem" }}>
+          <p style={{ fontFamily: "Inter, sans-serif", fontSize: "1rem", lineHeight: 1.7, color: "rgba(14, 13, 12, 0.8)", maxWidth: "40rem" }}>
             We manufacture our own emulsion paint under the New Wave name, and use that same
             product on our own finishing projects — the manufacturing side gives us direct,
             practical insight into how our paint performs in real interiors and exteriors.
@@ -25,7 +25,7 @@ export default function PaintStory() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
-          style={{ aspectRatio: "16 / 9", overflow: "hidden", background: "#F3ECE1" }}
+          style={{ aspectRatio: "16 / 9", overflow: "hidden", background: "var(--off-white)", border: "4px solid var(--gold)" }}
         >
           <img
             src="/images/ob/paint-1.jpg"
