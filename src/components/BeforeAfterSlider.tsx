@@ -44,7 +44,7 @@ export default function BeforeAfterSlider({ before, after, alt = "Project" }: Pr
         overflow: "hidden",
         userSelect: "none",
         cursor: "ew-resize",
-        background: "#0E0D0C0d",
+        background: "rgba(14, 13, 12, 0.05)",
         touchAction: "none",
       }}
     >
@@ -75,7 +75,7 @@ export default function BeforeAfterSlider({ before, after, alt = "Project" }: Pr
           bottom: 0,
           left: `${position}%`,
           width: "2px",
-          background: "#F3ECE1",
+          background: "var(--gold)",
           transform: "translateX(-1px)",
         }}
       />
@@ -88,22 +88,22 @@ export default function BeforeAfterSlider({ before, after, alt = "Project" }: Pr
           width: 36,
           height: 36,
           borderRadius: "999px",
-          background: "#F3ECE1",
+          background: "var(--gold)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          boxShadow: "0 4px 12px #0E0D0C55",
+          boxShadow: "0 4px 12px rgba(14, 13, 12, 0.4)",
         }}
       >
-        <Move size={16} color="#0E0D0C" />
+        <Move size={16} color="var(--black)" />
       </div>
 
-      <span style={{ position: "absolute", top: 8, left: 8, background: "#0E0D0Cd9", color: "#F3ECE1", fontSize: "0.65rem", padding: "0.25rem 0.5rem", fontFamily: "Inter, sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+      <span style={{ position: "absolute", top: 8, left: 8, background: "rgba(14, 13, 12, 0.85)", color: "var(--off-white)", fontSize: "0.65rem", padding: "0.25rem 0.5rem", fontFamily: "Inter, sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>
         Before
       </span>
-      <span style={{ position: "absolute", top: 8, right: 8, background: "#0E0D0Cd9", color: "#F3ECE1", fontSize: "0.65rem", padding: "0.25rem 0.5rem", fontFamily: "Inter, sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+      <span style={{ position: "absolute", top: 8, right: 8, background: "rgba(229, 57, 53, 0.9)", color: "var(--off-white)", fontSize: "0.65rem", padding: "0.25rem 0.5rem", fontFamily: "Inter, sans-serif", letterSpacing: "0.05em", textTransform: "uppercase" }}>
         After
       </span>
     </div>
   );
-          }
+        }
