@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
+import QuickServices from "../components/QuickServices";
 import FeaturedWork from "../components/FeaturedWork";
 import BeforeAfterTeaser from "../components/BeforeAfterTeaser";
-import Services from "../components/Services";
 import WhyOB from "../components/WhyOB";
 import AboutOB from "../components/AboutOB";
 import PaintStory from "../components/PaintStory";
@@ -21,6 +21,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <QuickServices />
       <FeaturedWork />
       <BeforeAfterTeaser />
       <RealEstateFeature />
@@ -32,4 +33,4 @@ export default function Home() {
       <StickyCTA />
     </>
   );
-}
+        }
