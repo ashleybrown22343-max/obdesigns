@@ -23,7 +23,7 @@ export default function Home() {
       <Hero />
       <FeaturedWork />
       <BeforeAfterTeaser />
-      <Services />
+  
       <RealEstateFeature />
       <WhyOB />
       <AboutOB />
