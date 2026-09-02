@@ -1,29 +1,55 @@
+/* =============================
+   OB Designs & Interiors
+   Header / Navigation styles
+   ============================= */
+
 .navHeader {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #F3ECE1;
-  border-bottom: 1px solid #0E0D0C1a;
+  background: var(--off-white);
+  border-bottom: 1px solid rgba(14, 13, 12, 0.1);
   font-family: "Inter", sans-serif;
 }
 
 .navInner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Logo area */
 .navLogo {
-  font-family: "Fraunces", serif;
-  font-weight: 600;
-  color: #0E0D0C;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
-  font-size: 1rem;
+  color: var(--black);
 }
 
+.navLogoImg {
+  /* PERFECTLY ROUND LOGO */
+  width: 52px;
+  height: 52px;
+  border-radius: 50%; 
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 10px rgba(14, 13, 12, 0.2);
+  flex-shrink: 0;
+}
+
+.navLogoText {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+/* Desktop links */
 .navLinks {
   display: flex;
   gap: 1.5rem;
@@ -32,38 +58,58 @@
 }
 
 .navLinks a {
-  color: #0E0D0C;
+  color: var(--black);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
+.navLinks a:hover {
+  color: var(--red);
+}
+
+/* CTA button */
 .navCta {
-  background: #0E0D0C;
-  color: #F3ECE1 !important;
+  background: var(--red);
+  color: var(--off-white) !important;
   padding: 0.6rem 1.1rem;
   text-decoration: none;
   font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
+.navCta:hover {
+  background: var(--gold);
+  color: var(--black) !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile toggle button */
 .navToggle {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
-  color: #0E0D0C;
+  color: var(--black);
 }
 
+/* Mobile menu */
 .navMobileMenu {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #0E0D0C14;
+  border-top: 1px solid rgba(14, 13, 12, 0.14);
 }
 
 .navMobileMenu a {
   padding: 1rem 1.5rem;
-  color: #0E0D0C;
+  color: var(--black);
   text-decoration: none;
-  border-bottom: 1px solid #0E0D0C0f;
+  border-bottom: 1px solid rgba(14, 13, 12, 0.08);
   font-size: 0.95rem;
+}
+
+.navMobileMenu a:hover {
+  color: var(--red);
 }
 
 .navMobileMenu .navCta {
@@ -71,12 +117,21 @@
   text-align: center;
 }
 
+/* Responsive breakpoints */
 @media (max-width: 780px) {
   .navLinks {
     display: none;
   }
   .navToggle {
     display: block;
+  }
+  /* On mobile, hide the text next to the logo to keep the header compact */
+  .navLogoText {
+    display: none;
+  }
+  .navLogoImg {
+    width: 42px;
+    height: 42px;
   }
 }
 
@@ -87,7 +142,8 @@
 }
 
 @media (max-width: 480px) {
-  .navLogo {
-    font-size: 0.8rem;
+  .navLogoImg {
+    width: 38px;
+    height: 38px;
   }
-}
+  }
