@@ -16,16 +16,16 @@ export default function BeforeAfterTeaser() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
-            style={{ fontFamily: "Fraunces, serif", fontSize: "clamp(1.5rem, 4vw, 2.25rem)", margin: 0 }}
+            style={{ fontFamily: "Fraunces, serif", fontSize: "clamp(1.5rem, 4vw, 2.25rem)", margin: 0, color: "var(--black)" }}
           >
             See the transformation
           </motion.h2>
-          <Link to="/projects?tab=before-after" style={{ fontFamily: "Inter, sans-serif", fontSize: "0.9rem", color: "#0E0D0C", textDecoration: "underline" }}>
+          <Link to="/projects?tab=before-after" style={{ fontFamily: "Inter, sans-serif", fontSize: "0.9rem", color: "var(--red)", textDecoration: "underline" }}>
             View all before & after →
           </Link>
         </div>
 
-        <p style={{ fontFamily: "Inter, sans-serif", color: "#0E0D0C88", marginBottom: "2rem", maxWidth: "40ch" }}>
+        <p style={{ fontFamily: "Inter, sans-serif", color: "rgba(14, 13, 12, 0.6)", marginBottom: "2rem", maxWidth: "40ch" }}>
           Drag the slider on any photo to see the real difference OB makes.
         </p>
 
