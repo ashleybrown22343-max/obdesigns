@@ -6,15 +6,16 @@ import WhyOB from "../components/WhyOB";
 import AboutOB from "../components/AboutOB";
 import PaintStory from "../components/PaintStory";
 import Process from "../components/Process";
+import RealEstateFeature from "../components/RealEstateFeature";
 import Footer from "../components/Footer";
 import StickyCTA from "../components/StickyCTA";
 import { useSEO } from "../lib/useDocumentTitle";
 
 export default function Home() {
   useSEO({
-    title: "OB Designs & Interiors | Painting, POP, Interiors & Paint in Nigeria",
+    title: "OB Designs & Interiors | Painting, POP, Real Estate & Paint in Nigeria",
     description:
-      "OB Designs & Interiors LTD offers painting, screeding, POP work, and interior & exterior design services nationwide in Nigeria. Book a consultation or shop paint & finishes today.",
+      "OB Designs & Interiors LTD offers painting, screeding, POP work, interior & exterior design, and trusted Real Estate consultancy in Mowe, Nigeria.",
   });
 
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <FeaturedWork />
       <BeforeAfterTeaser />
       <Services />
+      <RealEstateFeature />
       <WhyOB />
       <AboutOB />
       <PaintStory />
