@@ -8,11 +8,12 @@ import { useSEO } from "../lib/useDocumentTitle";
 import "../styles/projects.css";
 
 const filters: ("All" | ProjectCategory)[] = ["All", "Painting", "Screeding", "POP Installations", "Interiors", "Exteriors"];
+
 export default function Projects() {
   useSEO({
     title: "Our Projects | OB Designs & Interiors Portfolio",
     description:
-      "Browse real painting, screeding, POP, interior and exterior projects completed by OB Designs & Interiors nationwide.",
+      "Browse real painting, screeding, POP, interior and exterior projects completed by OB Designs & Interiors nationwide in Nigeria.",
   });
 
   const [searchParams] = useSearchParams();
@@ -40,6 +41,7 @@ export default function Projects() {
     <div className="projectsPage">
       <div className="projectsHero">
         <p className="eyebrow">Our Work</p>
+        <div className="heroAccentLine" />
         <h1>Projects that speak for themselves</h1>
         <p>A look at real work by OB Designs & Interiors — painting, screeding, POP installations, and full interior and exterior jobs, delivered nationwide.</p>
       </div>
@@ -66,7 +68,7 @@ export default function Projects() {
           <div className="masonry">
             {filtered.map((p, i) => (
               <div key={p.id} className="masonryItem" onClick={() => setLightboxIndex(i)}>
-                <img src={p.image} alt={`${p.category} project`} loading="lazy" />
+                <img src={p.image} alt={`${p.category} project in Nigeria`} loading="lazy" />
                 <span className="masonryBadge">{p.category}</span>
               </div>
             ))}
@@ -83,8 +85,9 @@ export default function Projects() {
       )}
 
       <div className="ctaBanner">
-        <p>Like what you see? Let's talk about your project.</p>
-        <Link className="ctaBannerBtn" to="/consultation">Book a Consultation</Link>
+        <h2>Like what you see?</h2>
+        <p>Let's talk about your project in Mowe, Lagos, or anywhere in Nigeria.</p>
+        <Link className="ctaBannerBtn" to="/consultation">Book a Consultation →</Link>
       </div>
 
       {tab === "portfolio" && lightboxIndex !== null && filtered[lightboxIndex] && (
@@ -101,4 +104,4 @@ export default function Projects() {
       )}
     </div>
   );
-}
+        }
