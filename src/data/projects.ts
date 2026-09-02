@@ -19,7 +19,6 @@ export const projects: ProjectItem[] = [
   { id: "pop-1", category: "POP Installations", image: "/images/ob/pop-1.jpg" },
   { id: "pop-2", category: "POP Installations", image: "/images/ob/pop-2.jpg" },
   { id: "pop-3", category: "POP Installations", image: "/images/ob/pop-3.jpg" },
-  { id: "pop-4", category: "POP Installations", image: "/images/ob/pop.jpg" },
   { id: "interior-1", category: "Interiors", image: "/images/ob/interior-1.jpg" },
   { id: "interior-2", category: "Interiors", image: "/images/ob/interior-2.jpg" },
   { id: "interior-3", category: "Interiors", image: "/images/ob/interior-3.jpg" },
