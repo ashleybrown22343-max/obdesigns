@@ -72,7 +72,7 @@ export const servicesDetail: ServiceInfo[] = [
     intro: "Wall screeding is the smooth, durable, weather-proof base that protects your exterior walls. Our screeding work is designed for Nigerian buildings, not floors.",
     detail: "We apply high-quality screeding and rendering to the *exterior walls* of residential and commercial buildings. This process smooths out rough surfaces, protects against dampness, and gives a perfect base for painting. We handle full building facades, compound walls, and gates in Mowe, Ogun State, and across Nigeria. Because we also paint, we ensure the screeding and paint work together perfectly for a long-lasting exterior finish.",
     quoteNote: "Wall screeding is priced by wall area and site condition. Request a free quote for your exterior walls today.",
-    category: "screeding",
+    category: "Screeding",
   },
   {
     slug: "new-wave-emulsion-paint-nigeria",
