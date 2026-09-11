@@ -7,7 +7,8 @@ export interface ProjectItem {
 }
 
 export const projects: ProjectItem[] = [
-  { id: "painting-1", category: "Painting", image: "/images/ob/painting-1.jpg" },
+  
+  { id: "interior-3", category: "Interiors", image: "/images/ob/interior-3.jpg" },
   { id: "painting-2", category: "Painting", image: "/images/ob/painting-2.jpg" },
   { id: "screeding-2", category: "Screeding", image: "/images/ob/screeding-2.jpg" },
   { id: "painting-4", category: "Painting", image: "/images/ob/painting-4.jpg" },
@@ -21,7 +22,7 @@ export const projects: ProjectItem[] = [
   { id: "pop-3", category: "POP Installations", image: "/images/ob/pop-3.jpg" },
   { id: "interior-1", category: "Interiors", image: "/images/ob/interior-1.jpg" },
   { id: "interior-2", category: "Interiors", image: "/images/ob/interior-2.jpg" },
-  { id: "interior-3", category: "Interiors", image: "/images/ob/interior-3.jpg" },
+  { id: "painting-1", category: "Painting", image: "/images/ob/painting-1.jpg" },
   { id: "interior-4", category: "Interiors", image: "/images/ob/interior-4.jpg" },
   { id: "exterior-1", category: "Exteriors", image: "/images/ob/exterior-1.jpg" },
   { id: "exterior-2", category: "Exteriors", image: "/images/ob/exterior-2.jpg" },
