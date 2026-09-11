@@ -61,12 +61,12 @@ export default function ServiceDetail({ slug }: { slug: string }) {
     return <div style={{ padding: "4rem 1.5rem" }}>Service not found.</div>;
   }
 
-  const galleryImages = service.category
+  const galleryImages = service.overrideImages
+    ? service.overrideImages.map((src) => ({ src, caption: service.heading }))
+    : service.category
     ? projects
         .filter((p) => p.category === service.category)
         .map((p) => ({ src: p.image, caption: `${service.heading} — recent project` }))
-    : service.overrideImage
-    ? [{ src: service.overrideImage, caption: service.heading }]
     : [];
 
   return (
