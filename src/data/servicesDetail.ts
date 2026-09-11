@@ -9,7 +9,7 @@ export interface ServiceInfo {
   detail: string;
   quoteNote: string;
   category?: ProjectCategory;
-  overrideImage?: string;
+  overrideImages?: string[];
   isProduct?: boolean;
 }
 
@@ -84,7 +84,7 @@ export const servicesDetail: ServiceInfo[] = [
     intro: "New Wave is our own emulsion paint line—not a third-party product we resell, but one we manufacture ourselves in Nigeria.",
     detail: "Because we use New Wave paint on our own painting and exterior wall screeding jobs across Mowe, Lagos, and Nigeria, we get direct, practical feedback on how it holds up in real Nigerian conditions. New Wave is available for direct purchase, whether or not you use our painting service. We deliver nationwide.",
     quoteNote: "Pricing depends on quantity and finish required. Contact us directly for current New Wave paint pricing.",
-    overrideImage: "/images/ob/paint-1.jpg",
+    overrideImages: ["/images/ob/paint-1.jpg"],
     isProduct: true,
   },
 ];
