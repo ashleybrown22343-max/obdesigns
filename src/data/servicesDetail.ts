@@ -75,7 +75,7 @@ export const servicesDetail: ServiceInfo[] = [
     overrideImages: [
   "/images/ob/exteriorscreeding-2.jpg",
   "/images/ob/exteriorscreeding.jpg"
-  },
+  ],
   {
     slug: "new-wave-emulsion-paint-nigeria",
     metaTitle: "New Wave Emulsion Paint | OB Designs & Interiors",
