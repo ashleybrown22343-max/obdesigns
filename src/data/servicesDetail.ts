@@ -74,7 +74,7 @@ export const servicesDetail: ServiceInfo[] = [
     quoteNote: "Wall screeding is priced by wall area and site condition. Request a free quote for your exterior walls today.",
     overrideImages: [
   "/images/ob/exteriorscreeding-2.jpg",
-  "/images/ob/exteriorscreeding.jpg",
+  "/images/ob/exteriorscreeding.jpg"],
       },
   {
     slug: "new-wave-emulsion-paint-nigeria",
